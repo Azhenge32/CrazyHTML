@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 直接指定contentEditable="true"表明该元素是可编辑额 -->
+<div contenteditable="true" style="width: 500px; border: 1px solid black">
+    <table style="width: 420px; border-collapse: collapse" border="1">
+        <tr>
+            <td>疯狂Java讲义</td>
+            <td>Android讲义</td>
+        </tr>
+        <tr>
+            <td>Java EE</td>
+            <td>Java EE</td>
+        </tr>
+    </table>
+</div>
+<hr />
+<!-- 双击后变为可编辑 -->
+<table id="target"ondblclick="this.contentEditable=true;"
+        style="width: 420px;border-collapse: collapse" border="1">
+    <tr>
+        <td>Java</td>
+        <td>Ruby</td>
+    </tr>
+    <tr>
+        <td>C/C++</td>
+        <td>Python</td>
+    </tr>
+</table>
+</body>
+</html>
