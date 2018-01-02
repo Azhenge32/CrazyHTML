@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="http://www.crazyit.org" method="post">
+   下面是简单下来菜单:<br />
+    <select name="skills" id="skills">
+        <option value="java">Java语言</option>
+        <option value="c">C语言</option>
+        <option value="Ruby">Ruby语言</option>
+    </select><br><br><br>
+    下面是允许多选的列表框：<br>
+    <select name="books" id="books" multiple="multiple" size="4">
+        <option value="java">疯狂Java讲义</option>
+        <option value="android">疯狂Android讲义</option>
+        <option value="ee">轻量级Java EE企业应用实战</option>
+    </select><br>
+    项目是允许多选的列表框: <br>
+    <select name="leegang" id="leegang" multiple="multiple" size="4">
+        <optgroup label="疯狂Java体系图书">
+            <option value="java" label="aaaaaaa">疯狂Java讲义</option>
+            <option value="android">疯狂Android讲义</option>
+            <option value="ee">轻量级Java EE企业应用实战</option>
+        </optgroup>
+        <optgroup label="其他图书">
+            <option value="struts2">Struts2.1权威指南</option>
+            <option value="ror">Ro R敏捷开发</option>
+        </optgroup>
+    </select><br>
+    <button type="submit"><b>提交</b></button>
+</form>
+</body>
+</html>
