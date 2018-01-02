@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /* 为div的子div元素定义了一个计数器：mycounter */
+        div>div{
+            counter-increment: mycounter;
+        }
+        /* 在div的子div元素的前端插入mycounter计数器和一个点 */
+        div>div:before {
+            content: counter(mycounter, lower-greek) '.';
+            font-size: 20pt;
+            font-width:bold;
+        }
+    </style>
+</head>
+<body>
+<div>
+<div>疯狂Java讲义</div>
+<div>疯狂Android讲义</div>
+<div>轻量级Java EE讲义</div>
+</div>
+</body>
+</html>

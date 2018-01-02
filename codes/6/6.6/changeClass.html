@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var chg = function () {
+            document.getElementById("up").className = 'solid';
+        }
+    </script>
+    <style type="text/css">
+        .solid {
+            width: 160px;
+            text-align: center;
+            border-right: #222 3px solid;
+            border-top:#ddd 3px solid;
+            border-left: #ddd 3px solid;
+            border-bottom: #222 3px solid;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<input type="button" onclick="chg();">
+<div id="up">有立体效果的层</div>
+</body>
+</html>

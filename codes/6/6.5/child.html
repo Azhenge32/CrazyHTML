@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        li:first-child {
+            border:1px solid black;
+        }
+        li:last-child {
+            background-color: #aaa;
+        }
+        li:nth-child(2) {
+            color:#888;
+        }
+        li:nth-last-child(2) {
+            font-weight: bold;
+        }
+        span:only-child {
+            font-size: 30pt;
+            font-family:"隶书";
+        }
+    </style>
+</head>
+<body>
+<ol>
+    <li>www.crazyit.org</li>
+    <li>www.fkjava.org</li>
+    <li>www.facejava.org</li>
+    <li>疯狂Java联盟</li>
+    <li>疯狂软件教育中心</li>
+</ol>
+<ul>
+    <li id="java">疯狂Java讲义</li>
+    <li id="javaee">轻量级Java EE企业应用实战</li>
+    <li id="ajax">疯狂Ajax讲义</li>
+    <li id="xml">疯狂XML讲义</li>
+    <li id="ejb"><span id="ejb1">轻量级Java EE企业应用实战</span></li>
+    <li><span id="android">疯狂Android讲义</span>
+        <a></a>
+    </li>
+</ul>
+<span>疯狂Java联盟</span>
+</body>
+</html>

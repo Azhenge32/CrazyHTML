@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="add">
+    图书名: <input type="text" name="name" required><br>
+    图书ISBN: <input type="text" name="isbn" required pattern="\d{3}-\d-\d{3}-\d{5}"><br>
+    图书价格: <input type="number" name="price" min="20" max="150" step="5"><br>
+    <input type="submit" value="提交" onclick="return check();">
+</form>
+<script type="text/javascript">
+    var check = function () {
+        if (!document.getElementById("name").checkValidity()) {
+            document.getElementById("name").setCustomValidity("图书名是必填的!");
+        }
+        if (!document.getElementById("isbn").checkValidity()) {
+            document.getElementById("isbn").setCustomValidity("必须符合XXX-X-XXX-XXXXX格式");
+        }
+        if (!document.getElementById("price").checkValidity()) {
+            document.getElementById("price").setCustomValidity("价格在20~150之间，且是5的倍数");
+        }
+    }
+</script>
+</body>
+</html>
