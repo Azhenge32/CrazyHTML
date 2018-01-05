@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+ position默认是static;
+  设置left,top无效
+  占据文档流位置
+  可管staic,relative
+  不能管absolute
+-->
+<div style="width: 250px; height: 200px;border: 1px solid black;left: 100px;top:100px;">
+
+</div>
+
+<!--
+ relative
+  设置left,top有效
+  占据文档流位置
+  可管staic,relative,absolute
+-->
+<div id="Layer2" style="position:relative;
+    left:50px; top:10px; width: 250px; height: 200px;
+    z-index:3;  border: 1px solid black;">
+    <!---->
+    position:2 relative
+    <div id="Layer21" style="position: relative;left:10px;top:10px;
+        width:80px;height: 88px;z-index: 1;background-color: #666">
+        position21:relative
+    </div>
+    <div id="Layer22" style="position: static;left:100px;top:100px;
+        width:80px;height: 88px;z-index: 1;background-color: #777">
+        position22:static
+    </div>
+    <div id="Layer23" style="position: absolute;left:140px;top:20px;
+        width:80px;height: 88px;z-index: 1;background-color: #888">
+        position23:absolute
+    </div>
+</div>
+<!--
+ absolute
+  设置left,top有效
+  不占据文档流位置
+  可管staic,relative,absolute
+-->
+<div id="Layer3" style="position: absolute;left:350px; top:200px;width:250px;
+    height: 200px; border: 1px solid black;">
+    position3: absolute
+    <div id="Layer31" style="position: relative;left:10px;top:10px;
+        width:80px;height: 88px;z-index: 1;background-color: #666">
+        position31:relative
+    </div>
+    <div id="Layer32" style="position: static;left:100px;top:100px;
+        width:80px;height: 88px;z-index: 1;background-color: #999">
+        position32:static
+    </div>
+    <div id="Layer33" style="position: absolute;left:140px;top:20px;
+        width:80px;height: 88px;z-index: 1;background-color: #888">
+        position33:absolute
+    </div>
+</div>
+<div id="Layer4" style="position:static;
+    left:650px; top:200px; width: 250px; height: 200px;
+    z-index:3;  border: 1px solid black;">
+    position4:static
+    <div id="Layer41" style="position: relative;left:10px;top:10px;
+        width:80px;height: 88px;z-index: 1;background-color: #666">
+        position41:relative
+    </div>
+    <div id="Layer42" style="position: static;left:100px;top:100px;
+        width:80px;height: 88px;z-index: 1;background-color: #777">
+        position42:static
+    </div>
+    <div id="Layer43" style="position: absolute;left:140px;top:20px;
+        width:80px;height: 88px;z-index: 1;background-color: #888">
+        position43:absolute
+    </div>
+</div>
+</body>
+</html>

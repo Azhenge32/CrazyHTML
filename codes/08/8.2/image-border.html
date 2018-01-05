@@ -3,8 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style type="text/css">
+        div {
+            width:400px;
+            height:450px;
+        }
+    </style>
 </head>
 <body>
-div[style="-o-border-image:url(
+<div style="-o-border-image:url(../../images/border.png) 27;
+-moz-border-image: url(../../images/border.png) 27;
+-webkit-border-image: url(../../images/border.png) 27;">
+    默认边框宽度
+</div>
+
+<div style="-o-border-image:url(../../images/border.png) 27/27px;
+-moz-border-image: url(../../images/border.png) 27/27px;
+-webkit-border-image: url(../../images/border.png) 27/27px;">
+    指定边框宽度27px,默认是拉伸边框图片
+</div>
+
+<div style="-o-border-image:url(../../images/border.png) 27/27px repeat;
+-moz-border-image: url(../../images/border.png) 27/27px repeat;
+-webkit-border-image: url(../../images/border.png) 27/27px repeat;">
+    指定边框宽度27px,平铺边框图片
+</div>
+
+<div style="-o-border-image:url(../../images/border.png) 27/27px round;
+-moz-border-image: url(../../images/border.png) 27/27px round;
+-webkit-border-image: url(../../images/border.png) 27/27px round;">
+    指定边框宽度27px,以round方式平铺边框图片
+</div>
+
+<div style="-o-border-image:url(../../images/border.png) 27/27px stretch round;
+-moz-border-image: url(../../images/border.png) 27/27px stretch round;
+-webkit-border-image: url(../../images/border.png) 27/27px stretch round;">
+    指定边框宽度27px,以横向stretch方式覆盖边框图片，一纵向round方式平铺图片
+</div>
+
 </body>
 </html>
