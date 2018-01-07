@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {
+            width: 200px;
+            height: 160px;
+            background-color: red;
+            -moz-transition: background-color 2s linear, width 2s linear, height 2s linear;
+            -webkit-transition: background-color 2s linear, width 2s linear, height 2s linear;
+            -o-transition: background-color 2s linear, width 2s linear, height 2s linear;
+        }
+    </style>
+</head>
+<body>
+<button onclick="zoom(2, 'blue');">放大</button>
+<button onclick="zoom(0.5, 'green');">缩小</button>
+<button onclick="zoom(1, 'red');">恢复</button>
+<div id="target"></div>
+<script type="text/javascript">
+    var originWidth = 200;
+    var originHeight = 160;
+    var zoom = function(scale, bgColor) {
+        var target = document.getElementById("target");
+        target.style.width = originWidth * scale + "px";
+        target.style.height = originHeight * scale + "px";
+        target.style.backgroundColor = bgColor;
+    }
+</script>
+</body>
+</html>

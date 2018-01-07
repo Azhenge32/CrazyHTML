@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="test">
+<script type="text/javascript">
+    var a = document.createElement("table");
+    a.border = 1;
+    var caption = a.createCaption();
+    caption.innerHTML = "表格标题";
+    for (var i = 0 ; i < 5 ; i ++) {
+        // 插入行
+        var tr = a.insertRow(i);
+        // 为每行循环插入7列
+        for (var j = 0 ; j < 7 ; j ++) {
+            var td = tr.insertCell(j);
+            td.innerHTML = "单元格内容 " + i + j;
+        }
+    }
+    document.getElementById("test").appendChild(a);
+</script>
+</body>
+</html>

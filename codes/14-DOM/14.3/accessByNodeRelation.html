@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .selected{
+            background-color: #66f;
+        }
+    </style>
+</head>
+<body>
+<ol id="books">
+    <li id="java">疯狂Java讲义</li>
+    <li id="ssh">轻量级Java EE企业应用实战</li>
+    <li id="ajax" class="selected a">疯狂Ajax讲义</li>
+    <li id="xml">疯狂XML讲义</li>
+    <li id="ejb">EJB 讲义</li>
+    <li id="android">Android讲义</li>
+</ol>
+<input type="button" value="当前" onclick="change(curTarget);">
+<input type="button" value="父节点" onclick="change(curTarget.parentNode);">
+<input type="button" value="第一个" onclick="change(curTarget.parentNode.firstChild.nextSibling);">
+<input type="button" value="上一个" onclick="change(curTarget.previousSibling.previousSibling);">
+<input type="button" value="下一个" onclick="change(curTarget.nextSibling.nextSibling);">
+<input type="button" value="最后一个" onclick="change(curTarget.parentNode.lastChild.previousSibling);">
+<script type="text/javascript">
+    var curTarget = document.getElementById("ajax");
+    var change = function (target) {
+        alert(target.innerHTML);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="a"> <b>ok</b>疯狂Java <b>no</b> 讲义</div>
+<textarea id="b" cols="25" rows="10" row="3">
+    轻量级Java EE企业应用实战
+</textarea>
+<img id="img" src="" alt=""/>
+<input type="button" value="访问2个元素" onclick="accessById();">
+<script type="text/javascript">
+    var accessById = function () {
+        alert(document.getElementById("img").innerHTML);
+        alert(document.getElementById("a").innerHTML);
+        alert(document.getElementById("a").value);
+        alert(document.getElementById("a").innerText);
+        alert(document.getElementById("b").value);
+        alert(document.getElementById("b").innerHTML);
+    }
+</script>
+</body>
+</html>

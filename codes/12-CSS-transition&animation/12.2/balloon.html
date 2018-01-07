@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        img#target{
+            position: absolute;
+            -moz-transition: left 5s linear, top 5s linear;
+            -webkit-transition: left 5s linear, top 5s linear;
+            -o-transition: left 5s linear, top 5s linear;
+        }
+    </style>
+</head>
+<body>
+<img src="../../images/balloon.gif" alt="气球" id="target"/>
+<script type="text/javascript">
+    var target = document.getElementById("target");
+    target.style.left = "0px";
+    target.style.top = "0px";
+    document.onmousedown = function (evt) {
+        target.style.left = evt.pageX + "px";
+        target.style.top = evt.pageY + "px";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        @-webkit-keyframes 'complex' {
+            0% {
+                -webkit-transform: rotate(0deg) scale(1);
+                background-color: #f00;
+            }
+            40% {
+                -webkit-transform: rotate(720deg) scale(0.1);
+                background-color: #f00;
+            }
+            80% {
+                -webkit-transform: rotate(1080deg) scale(4);
+                background-color: #f00;
+            }
+            100% {
+                -webkit-transform: rotate(0deg) scale(1);
+                background-color: #f00;
+            }
+        }
+        div {
+            background-color: gray;
+            border: 1px solid black;
+            position: absolute;
+            /*left: 160px;
+            top: 120px;
+            width: 60px;
+            height: 60px;*/
+        }
+        div:hover {
+            -webkit-animation-name: 'complex';
+            -webkit-animation-duration: 8s;
+            -webkit-animation-iteration-count: 1;
+        }
+    </style>
+</head>
+<body>
+<div>鼠标悬停、开始动画</div>
+</body>
+</html>

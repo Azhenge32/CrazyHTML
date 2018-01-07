@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        a:link {
+            text-decoration: none;
+        }
+        div>a{
+            display: inline-block;
+            text-align: center;
+            width: 120px;
+            padding: 8px;
+            background-color: #eee;
+            border: 2px solid black;
+            border-radius: 20px;
+        }
+        @-webkit-keyframes 'fisheye' {
+            0%{
+                -webkit-transform: scale(1);
+                background-color: #eee;
+                border-radius: 10px;
+            }
+            40%{
+                -webkit-transform: scale(1.5);
+                background-color: #bbb;
+                border-radius: 10px;
+            }
+            100%{
+                -webkit-transform: scale(1);
+                background-color: #eee;
+                border-radius: 10px;
+            }
+        }
+        div>a:hover {
+            -webkit-animation-name: 'fisheye';
+            -webkit-animation-duration: 3s;
+            -webkit-animation-iteration-count: infinite;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <a href="">疯狂Java联盟</a><a href="">疯狂Java联盟</a><a href="">疯狂Java联盟</a><a href="">疯狂Java联盟</a>
+</div>
+</body>
+</html>
