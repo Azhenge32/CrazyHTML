@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var n = 0;
+    var win = null;
+    // 用于弹出窗口显示提示信息的函数
+    var show = function (msg) {
+        // 判断弹出窗口是否为空
+        if ((win == null) || win.closed) {
+            // 打开一个新的弹出窗口
+            win = window.open("", "console", "width=400,height=250,resizable");
+            win.document.open("text/html");
+        }
+        // 让弹出窗口得到焦点
+        win.focus();
+        win.document.writeln(msg);
+    }
+</script>
+<input type="button" value="单击"
+    onclick="show('您单击了按钮:' + ++ n + '次。<br />');">
+</body>
+</html>

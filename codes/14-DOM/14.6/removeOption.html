@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="opValue">
+<input type="button" id="add" value="增加" onclick="add();">
+<input type="button" id="del" value="删除" onclick="del();">
+<select  id="show" size="8" style="width:120px;"></select>
+<script type="text/javascript">
+    var show = document.getElementById("show");
+    var add = function () {
+        var op = new Option(document.getElementById('opValue').value);
+        show.options[show.options.length] = op;
+    }
+    var del = function () {
+        if (show.options.length > 0) {
+            // show.remove(show.options.length - 1);
+            show.options[show.options.length - 1] = null;
+        }
+    }
+</script>
+</body>
+</html>

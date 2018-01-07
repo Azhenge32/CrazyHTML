@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<span id="tm"></span>
+<script type="text/javascript">
+    var timer;
+    var cur = new Date().getTime();
+    // console.log(new Date());
+    var setTime = function () {
+        document.getElementById("tm").innerHTML = new Date().getTime();
+        if (new Date().getTime() - cur > 60 * 1000) {
+            clearInterval(timer);
+        }
+    }
+    timer = window.setInterval("setTime();", 1000);
+</script>
+</body>
+</html>

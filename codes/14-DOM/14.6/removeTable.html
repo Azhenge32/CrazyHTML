@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" id="delrow" value="删除表格最后一行" onclick="delrow();"> <br>
+<input type="button" id="delcell" value="删除最后一行的最后一格" onclick="delCell();"> <br>
+<table id="test" border="1" style="width:400px;">
+    <caption>疯狂Java体系</caption>
+    <tr>
+        <td>疯狂Java体系</td>
+        <td>Java EE体系</td>
+    </tr>
+    <tr>
+        <td>Ajax讲义</td>
+        <td>EJB讲义</td>
+    </tr>
+    <tr>
+        <td>XML讲义</td>
+        <td>Android讲义</td>
+    </tr>
+</table>
+<script type="text/javascript">
+    // 获取目标表格
+    var tab = document.getElementById("test");
+    var delrow = function () {
+        if (tab.rows.length > 0) {
+            tab.deleteRow(tab.rows.length - 1);
+        }
+    }
+    var delCell = function () {
+        var rowList = tab.rows;
+        // var lastRow = rowList[rowList.length - 1];
+        var lastRow = rowList.item(rowList.length - 1);
+        if (lastRow.cells.length > 0) {
+            lastRow.deleteCell(lastRow.cells.length - 1);
+        } else {
+            delrow();
+            delCell();
+        }
+    }
+</script>
+</body>
+</html>
