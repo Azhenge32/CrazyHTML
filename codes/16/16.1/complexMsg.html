@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>客户端留言板</h2>
+留言标题： <input type="text" id="title" name="title" size="60"> <br>
+留言信息： <textarea name="content" id="content" cols="50" rows="8"></textarea> <br>
+留言人: <input type="text" id="user" name="user"> <br>
+<input type="button" value="添加留言" onclick="addMsg();">
+<input type="button" value="清楚留言" onclick="clearMsg();">
+<hr>
+<table style="width:550px;">
+    <tr>
+        <th>留言标题</th>
+        <th>留言内容</th>
+        <th>留言人</th>
+        <th>留言时间</th>
+    </tr>
+    <tbody id="show"></tbody>
+</table>
+<script type="text/javascript">
+    var loadMsg = function () {
+        var tb = document.getElementById("show");
+        tb.innerHTML = "";
+        for (var i = 0 ; i < localStorage.length; i ++) {
+            var key = localStorage.key(i);
+            var date = new Date();
+            date.setTime(key);
+            // 获取留言时间
+            var dateStr = date.toLocaleDateString() + "&nbsp" + date.toLocaleTimeString();
+            var value = localStorage.getItem(key);
+            var msg = JSON.parse(value);
+            var row = tb.insertRow(i);
+            row.insertCell(0).innerHTML = msg.title;
+            row.insertCell(1).innerHTML = msg.constructor;
+            row.insertCell(2).innerHTML = msg.user;
+            row.insertCell(3).innerHTML = dateStr;
+        }
+    }
+
+    var addMsg = function() {
+        var titleElement = document.getElementById("title");
+        var contentElement = document.getElementById("content");
+        var userElement = document.getElementById("user");
+        // 将留言标题、留言内容、留言用户封装成对象
+        var msg = {
+            title : titleElement.value,
+            content: contentElement.value,
+            user: userElement.value
+        };
+        var time = new Date().getTime();
+        localStorage.setItem(time, JSON.stringify(msg));
+        titleElement.value = "";
+        contentElement.value = "";
+        userElement.value = "";
+        alert("数据已保存。");
+        loadMsg();
+    }
+
+    function clearMsg() {
+        localStorage.clear();
+        alert("全部留言已被清除。");
+        loadMsg();
+    }
+    window.onload = loadMsg();
+</script>
+</body>
+</html>

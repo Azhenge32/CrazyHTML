@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>检测服务器更新</h2>
+<script type="text/javascript">
+    setInterval(function () {
+        // 手动检查 服务器是否有更新
+        applicationCache.update();
+    }, 2000);
+    applicationCache.opupdateready = function () {
+        if (confirm("已从远程服务器下载了需要更新的缓存，是否立即更新?")) {
+            // 立即更新缓存
+            applicationCache.swapCache();
+            // 重新加载页面
+            location.reload();
+        }
+    }
+</script>
+</body>
+</html>

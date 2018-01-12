@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    window.addEventListener("offline", function () {
+        alert("您已经变成离线状态、所有数据将会保存到本地!");
+    }, true);
+    // 判断浏览器的在线状态
+    if (navigator.onLine) {
+        alert("在线");
+    } else {
+        alert("离线");
+    }
+</script>
+</body>
+</html>
