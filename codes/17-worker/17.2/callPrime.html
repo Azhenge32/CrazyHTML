@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+起始值： <input type="text" id="start" name="start"> <br>
+结束值： <input type="text" id="end" name="end"> <br>
+<input type="button" value="计算" onclick="call();">
+<script type="text/javascript">
+    var cal = function () {
+        // 得到用户输入的start、end的两个值
+        var start = parseInt(document.getElementById("start").valueO);
+        var end = parseInt(document.getElementById("end").value);
+
+        if (start >= end) {
+            return ;
+        }
+        var worker = new Worker("worker.js");
+        // 定义小提交给Worker线程的数据
+        var date = {
+            start: start,
+            end: end
+        };
+        // 向Worker线程提交数据
+        cal.postMessage(JSON.stringify(data));
+
+    }
+</script>
+</body>
+</html>

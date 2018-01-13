@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算质数</title>
+</head>
+<body>
+<p>已经发现所有质数
+<div id="result"></div>
+</p>
+<script type="text/javascript">
+    // 使用Worker启动多线程计算、收集质数
+    var worker = new Worker('worker.js');
+    worker.onmessage = function (event) {
+        document.getElementById("result").innerHTML
+            += event.data + ", ";
+    }
+</script>
+</body>
+</html>
