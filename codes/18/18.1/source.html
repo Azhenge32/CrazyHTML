@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨文档发送消息</title>
+    <script type="text/javascript">
+        var send = function () {
+            var targetWin = window.open('file:///C:/Users/Administrator/WebstormProjects/CrazyHTML/codes/18/18.1/source.html', '_blank', 'width=400, height=300');
+            targetWin.onload = function (ev) {
+                targetWin.postMessage(document.getElementById("msg").value, "http://localhost:8181/target");
+            }
+        };
+
+        window.onmessage = function (ev) {
+            /*if (ev.origin != "http://localhost:8181") {
+                return ;
+            }*/
+            var show = document.getElementById("show");
+            show.innerHTML += (ev.origin + "传来了消息:" + ev.data + "<br />");
+        };
+    </script>
+</head>
+<body>
+消息: <input type="text" id="msg" name="msg">
+<button onclick="send();">发送消息</button>
+<div id="show"></div>
+</body>
+</html>

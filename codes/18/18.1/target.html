@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>跨文档发送消息接收</title>
+    <script type="text/javascript">
+        window.onmessage = function (ev) {
+            if (ev.origin != 'http://localhost:8181') {
+                return ;
+            }
+            document.body.innerHTML = (ev.origin + "传来了消息:" + ev.data);
+            // 向发送消息的页面回传消息
+            ev.source.postMessage("回传消息，这里是" + this.location, ev.origin);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

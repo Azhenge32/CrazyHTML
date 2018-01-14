@@ -7,6 +7,7 @@
 <body>
 起始值： <input type="text" id="start" name="start"> <br>
 结束值： <input type="text" id="end" name="end"> <br>
+个数： <input type="text" id="count" name="count"> <br>
 <input type="button" value="计算" onclick="call();">
 <table id="show"></table>
 <script type="text/javascript">
@@ -14,6 +15,7 @@
         // 得到用户输入的start、end的两个值
         var start = parseInt(document.getElementById("start").value);
         var end = parseInt(document.getElementById("end").value);
+        var count = parseInt(document.getElementById("count").value);
 
         if (start >= end) {
             return ;
@@ -22,7 +24,8 @@
         // 定义小提交给Worker线程的数据
         var data = {
             start: start,
-            end: end
+            end: end,
+            count: count
         };
         // 向Worker线程提交数据
         cal.postMessage(JSON.stringify(data));

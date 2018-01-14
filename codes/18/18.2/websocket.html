@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var websocket = new WebSocket("ws://127.0.0.1:30000");
+    websocket.onopen = function (ev) {
+        alert('已打开连接');
+        websocket.send("我是疯狂软件教育中心!");
+    }
+    websocket.onmessage = function (ev) {
+        alert("收到的消息是： " + event.data);
+    }
+</script>
+</body>
+</html>
