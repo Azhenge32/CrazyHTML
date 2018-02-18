@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: white;
+        }
+        .center {
+            background-color: #ccc;
+            box-sizing: border-box;
+            height: 200px;
+            width: 400px;
+            position:absolute;
+            top: calc(50% - 100px);
+            left: calc(50% - 200px);
+        }
+
+
+        .area1, .area2 {
+            background-color: orange;
+            height: 50px;
+            width: 50px;
+        }
+
+        .area1 {
+            position: absolute;
+            border-radius: 0 0 50px 0;
+        }
+        .area2 {
+            position: absolute;
+            top: 150px;
+            left: 350px;
+            border-radius: 50px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+<div class="center">
+    <div class="area1"></div>
+    <div class="area2"></div>
+</div>
+</body>
+</html>
